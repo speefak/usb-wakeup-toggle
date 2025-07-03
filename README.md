@@ -40,7 +40,7 @@ Follow the on-screen menu to configure wakeup settings:
 ## License
 
 **Creative Commons BY-NC-SA**
-Author: speefak – [itoss@gmx.de](mailto:itoss@gmx.de)
+Author: speefak
 
 ---
 
