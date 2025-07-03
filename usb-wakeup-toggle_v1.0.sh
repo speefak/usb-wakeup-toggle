@@ -121,6 +121,8 @@ toggle_all_devices () {
 		fi
 	done
 	echo -e "\n$Green✔ All USB devices set to \"$target\" set.$Reset"
+	read
+	show_main_menu
 }
 #------------------------------------------------------------------------------------------------------------------------------------------------
 generate_udev_rules_for_selected () {
@@ -133,7 +135,7 @@ generate_udev_rules_for_selected () {
 		DevicePath=${DeviceMap[$idx]}
 		idVendor=$(cat "$DevicePath/idVendor")
 		idProduct=$(cat "$DevicePath/idProduct")
-		rules+="SUBSYSTEM==\"usb\", ATTR{idVendor}==\"$idVendor\", ATTR{idProduct}==\"$idProduct\", ATTR{power/wakeup}=\"enabled\"\n"
+		rules+="SUBSYSTEM==\"usb\", ATTR{idVendor}==\"$idVendor\", ATTR{idProduct}==\"$idProduct\", ATTR{power/wakeup}=\"disabled\"\n"
 	done
 
 	# check for changes
@@ -185,6 +187,5 @@ exit 0
 
 
 #TODO write udev rules for all disabled devices, get device info from get_usb_device_list => ${USBDeviceList[@]}
-
-
+#TODO do not show arraynumbers in dialogbox
 
